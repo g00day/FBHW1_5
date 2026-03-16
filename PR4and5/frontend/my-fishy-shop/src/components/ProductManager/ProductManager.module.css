@@ -1,0 +1,171 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.formContainer {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.formTitle {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #444;
+    font-size: 1.2em;
+}
+
+.input {
+    display: block;
+    margin: 10px 0;
+    padding: 8px 12px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+.buttonGroup {
+    margin-top: 15px;
+}
+
+.addButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.addButton:hover {
+    background-color: #45a049;
+}
+
+.saveButton {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.saveButton:hover {
+    background-color: #1976D2;
+}
+
+.cancelButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.cancelButton:hover {
+    background-color: #d32f2f;
+}
+
+.listTitle {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.productCard {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    background-color: white;
+    transition: box-shadow 0.3s;
+}
+
+.productCard:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.productInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.productName {
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+
+.productPrice {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.productStock {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.productDetails {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.editButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.editButton:hover {
+    background-color: #e3f2fd;
+}
+
+.deleteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+    background-color: #ffebee;
+}

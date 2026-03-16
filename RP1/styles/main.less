@@ -1,0 +1,107 @@
+@primary-color: #ff6b6b;
+@border-radius: 12px; 
+@box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+@font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+// Миксин для создания адаптивных карточек с красивым эффектом при наведении
+.card-hover-effect() {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+}
+
+
+.darken(@color, @percentage) {
+    @result: mix(#000, @color, @percentage);
+}
+
+
+body {
+    font-family: @font-family;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.product-card {
+    max-width: 350px;
+    background: white;
+    border-radius: @border-radius;
+    overflow: hidden;
+    box-shadow: @box-shadow;
+    
+    // Применяем миксин к карточке
+    .card-hover-effect();
+    
+    &__image {
+        height: 220px;
+        overflow: hidden;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover & img {
+            transform: scale(1.1);
+        }
+    }
+    
+    &__content {
+        padding: 24px 20px;
+    }
+    
+    &__title {
+        margin: 0 0 10px 0;
+        font-size: 1.5rem;
+        color: #333;
+    }
+    
+    &__description {
+        margin: 0 0 20px 0;
+        color: #666;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+    
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    &__price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: @primary-color;
+    }
+    
+    &__button {
+        background: @primary-color;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+            background-color: darken(@primary-color, 10%);
+        }
+        
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}

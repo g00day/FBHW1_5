@@ -1,0 +1,14 @@
+{
+  "name": "products-crud",
+  "version": "1.0.0",
+  "description": "API для товаров",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

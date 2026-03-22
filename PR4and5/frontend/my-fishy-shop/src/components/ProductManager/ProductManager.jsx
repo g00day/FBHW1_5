@@ -10,10 +10,10 @@ function ProductManager() {
         category: '',
         description: '',
         price: '',
-        stock: ''
+        stock: '',
+        photo: ''
     });
 
-    // Загрузка товаров
     useEffect(() => {
         loadProducts();
     }, []);
@@ -27,7 +27,6 @@ function ProductManager() {
         }
     };
 
-    // Добавление товара
     const addProduct = async () => {
         try {
             await api.post('/products', {
@@ -35,16 +34,15 @@ function ProductManager() {
                 price: Number(form.price),
                 stock: Number(form.stock),
                 rating: 0,
-                photo: '/images/default.jpg'
+                photo: form.photo
             });
-            setForm({ name: '', category: '', description: '', price: '', stock: '' });
+            resetForm();
             loadProducts();
         } catch (error) {
             console.error('Ошибка добавления:', error);
         }
     };
 
-    // Обновление товара
     const updateProduct = async () => {
         if (!editingProduct) return;
         try {
@@ -53,15 +51,13 @@ function ProductManager() {
                 price: Number(form.price),
                 stock: Number(form.stock)
             });
-            setEditingProduct(null);
-            setForm({ name: '', category: '', description: '', price: '', stock: '' });
+            resetForm();
             loadProducts();
         } catch (error) {
             console.error('Ошибка обновления:', error);
         }
     };
 
-    // Удаление товара
     const deleteProduct = async (id) => {
         if (!confirm('Удалить товар?')) return;
         try {
@@ -72,7 +68,6 @@ function ProductManager() {
         }
     };
 
-    // Начало редактирования
     const startEdit = (product) => {
         setEditingProduct(product);
         setForm({
@@ -80,21 +75,20 @@ function ProductManager() {
             category: product.category,
             description: product.description,
             price: product.price,
-            stock: product.stock
+            stock: product.stock,
+            photo: product.photo
         });
     };
 
-    // Отмена редактирования
-    const cancelEdit = () => {
+    const resetForm = () => {
         setEditingProduct(null);
-        setForm({ name: '', category: '', description: '', price: '', stock: '' });
+        setForm({ name: '', category: '', description: '', price: '', stock: '', photo: '' });
     };
 
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Управление товарами</h2>
             
-            {/* Форма добавления/редактирования */}
             <div className={styles.formContainer}>
                 <h3 className={styles.formTitle}>
                     {editingProduct ? 'Редактировать' : 'Добавить'} товар
@@ -104,6 +98,13 @@ function ProductManager() {
                     placeholder="Название"
                     value={form.name}
                     onChange={(e) => setForm({...form, name: e.target.value})}
+                    className={styles.input}
+                />
+                <input
+                    type="text"
+                    placeholder="URL изображения"
+                    value={form.photo}
+                    onChange={(e) => setForm({...form, photo: e.target.value})}
                     className={styles.input}
                 />
                 <input
@@ -120,48 +121,46 @@ function ProductManager() {
                     onChange={(e) => setForm({...form, description: e.target.value})}
                     className={styles.input}
                 />
-                <input
-                    type="number"
-                    placeholder="Цена"
-                    value={form.price}
-                    onChange={(e) => setForm({...form, price: e.target.value})}
-                    className={styles.input}
-                />
-                <input
-                    type="number"
-                    placeholder="Количество"
-                    value={form.stock}
-                    onChange={(e) => setForm({...form, stock: e.target.value})}
-                    className={styles.input}
-                />
+                <div style={{ display: 'flex', gap: '10px' }}>
+                    <input
+                        type="number"
+                        placeholder="Цена"
+                        value={form.price}
+                        onChange={(e) => setForm({...form, price: e.target.value})}
+                        className={styles.input}
+                    />
+                    <input
+                        type="number"
+                        placeholder="Количество"
+                        value={form.stock}
+                        onChange={(e) => setForm({...form, stock: e.target.value})}
+                        className={styles.input}
+                    />
+                </div>
                 
                 <div className={styles.buttonGroup}>
                     {editingProduct ? (
                         <>
-                            <button onClick={updateProduct} className={styles.saveButton}>
-                                Сохранить
-                            </button>
-                            <button onClick={cancelEdit} className={styles.cancelButton}>
-                                Отмена
-                            </button>
+                            <button onClick={updateProduct} className={styles.saveButton}>Сохранить</button>
+                            <button onClick={resetForm} className={styles.cancelButton}>Отмена</button>
                         </>
                     ) : (
-                        <button onClick={addProduct} className={styles.addButton}>
-                            Добавить
-                        </button>
+                        <button onClick={addProduct} className={styles.addButton}>Добавить</button>
                     )}
                 </div>
             </div>
 
-            {/* Список товаров */}
             <div>
-                <h3 className={styles.listTitle}>
-                    Все товары ({products.length})
-                </h3>
+                <h3 className={styles.listTitle}>Все товары ({products.length})</h3>
                 {products.map(product => (
                     <div key={product.id} className={styles.productCard}>
                         <div className={styles.productInfo}>
-                            <div>
+                            <img 
+                                src={product.photo} 
+                                alt={product.name} 
+                                className={styles.productThumbnail} 
+                            />
+                            <div className={styles.productTextContent}>
                                 <span className={styles.productName}>{product.name}</span>
                                 <span className={styles.productPrice}>{product.price}₽</span>
                                 <span className={styles.productStock}>({product.stock} шт.)</span>
@@ -169,19 +168,9 @@ function ProductManager() {
                                     {product.category} | {product.description}
                                 </div>
                             </div>
-                            <div>
-                                <button 
-                                    onClick={() => startEdit(product)}
-                                    className={styles.editButton}
-                                >
-                                    ✏️
-                                </button>
-                                <button 
-                                    onClick={() => deleteProduct(product.id)}
-                                    className={styles.deleteButton}
-                                >
-                                    🗑️
-                                </button>
+                            <div className={styles.actions}>
+                                <button onClick={() => startEdit(product)} className={styles.editButton}>✏️</button>
+                                <button onClick={() => deleteProduct(product.id)} className={styles.deleteButton}>🗑️</button>
                             </div>
                         </div>
                     </div>

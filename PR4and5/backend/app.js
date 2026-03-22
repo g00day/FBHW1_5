@@ -51,7 +51,7 @@ let products = [
         price: 350,
         stock: 150,
         rating: 4.8,
-        photo: '/images/hook-owner.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     },
     { 
         id: 2, 
@@ -61,7 +61,7 @@ let products = [
         price: 4990,
         stock: 12,
         rating: 4.9,
-        photo: '/images/reel-daiwa.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     },
     { 
         id: 3, 
@@ -71,7 +71,7 @@ let products = [
         price: 2100,
         stock: 8,
         rating: 4.5,
-        photo: '/images/rod-mah.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     },
     { 
         id: 4, 
@@ -81,7 +81,7 @@ let products = [
         price: 180,
         stock: 200,
         rating: 4.6,
-        photo: '/images/float-sensas.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     },
     { 
         id: 5, 
@@ -91,7 +91,7 @@ let products = [
         price: 890,
         stock: 45,
         rating: 4.7,
-        photo: '/images/line-sunline.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     },
     { 
         id: 6, 
@@ -101,7 +101,7 @@ let products = [
         price: 420,
         stock: 75,
         rating: 4.5,
-        photo: '/images/bait-kosadaka.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     },
     { 
         id: 7, 
@@ -111,7 +111,7 @@ let products = [
         price: 1250,
         stock: 18,
         rating: 4.9,
-        photo: '/images/wobbler-yozuri.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     },
     { 
         id: 8, 
@@ -121,7 +121,7 @@ let products = [
         price: 1800,
         stock: 5,
         rating: 4.4,
-        photo: '/images/landing-net.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     },
     { 
         id: 9, 
@@ -131,7 +131,7 @@ let products = [
         price: 290,
         stock: 120,
         rating: 4.6,
-        photo: '/images/feeder.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     },
     { 
         id: 10, 
@@ -141,7 +141,7 @@ let products = [
         price: 2500,
         stock: 7,
         rating: 4.7,
-        photo: '/images/thermos.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     },
     { 
         id: 11, 
@@ -151,7 +151,7 @@ let products = [
         price: 420,
         stock: 90,
         rating: 4.5,
-        photo: '/images/weights.jpg'
+        photo: 'https://rybalkashop.ru/img/cache/products/hq/400x400/HQNgqQh2Knvl5OB4qB--2LuxBE_enl.jpg'
     }
 ];
 

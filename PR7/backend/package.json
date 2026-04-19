@@ -1,0 +1,16 @@
+{
+  "name": "products-crud",
+  "version": "1.0.0",
+  "description": "API для товаров",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^4.22.1",
+    "nanoid": "^5.1.9",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

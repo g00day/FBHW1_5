@@ -1,0 +1,166 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.container .title {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.formContainer {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+.formContainer .formTitle {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #444;
+  font-size: 1.2em;
+}
+.formContainer .input {
+  display: block;
+  margin: 10px 0;
+  padding: 8px 12px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.formContainer .input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+.buttonGroup {
+  margin-top: 15px;
+}
+.buttonGroup .addButton {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, box-shadow 0.2s;
+  background-color: #4CAF50;
+  color: white;
+}
+.buttonGroup .addButton:active {
+  transform: translateY(1px);
+}
+.buttonGroup .addButton:hover {
+  background-color: #45a049;
+}
+.buttonGroup .saveButton {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, box-shadow 0.2s;
+  background-color: #2196F3;
+  color: white;
+  margin-right: 10px;
+}
+.buttonGroup .saveButton:active {
+  transform: translateY(1px);
+}
+.buttonGroup .saveButton:hover {
+  background-color: #1976D2;
+}
+.buttonGroup .cancelButton {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, box-shadow 0.2s;
+  background-color: #f44336;
+  color: white;
+}
+.buttonGroup .cancelButton:active {
+  transform: translateY(1px);
+}
+.buttonGroup .cancelButton:hover {
+  background-color: #d32f2f;
+}
+.listTitle {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+.productCard {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 6px;
+  background-color: white;
+  transition: box-shadow 0.3s;
+}
+.productCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.productCard .productInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.productCard .productInfo .productThumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 15px;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+.productCard .productInfo .productTextContent {
+  flex-grow: 1;
+}
+.productCard .productInfo .productTextContent .productName {
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+.productCard .productInfo .productTextContent .productPrice {
+  color: #4CAF50;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.productCard .productInfo .productTextContent .productStock {
+  color: #666;
+  font-size: 0.9em;
+}
+.productCard .productInfo .productTextContent .productDetails {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 5px;
+}
+.productCard .productInfo .actions {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+.productCard .productInfo .actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.productCard .productInfo .actions .editButton {
+  margin-right: 10px;
+}
+.productCard .productInfo .actions .editButton:hover {
+  background-color: #e3f2fd;
+}
+.productCard .productInfo .actions .deleteButton:hover {
+  background-color: #ffebee;
+}
